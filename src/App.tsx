@@ -3,8 +3,11 @@ import {
   AlertTriangle,
   ArrowLeft,
   ArrowRight,
+  BarChart3,
   Bell,
   Bot,
+  Building2,
+  CalendarCheck2,
   CalendarDays,
   Camera,
   Check,
@@ -19,6 +22,7 @@ import {
   Gauge,
   ImagePlus,
   LayoutDashboard,
+  LockKeyhole,
   MessageCircle,
   MoreHorizontal,
   Pencil,
@@ -28,7 +32,10 @@ import {
   Settings,
   ShieldCheck,
   Sparkles,
+  Target,
   Trash2,
+  TrendingUp,
+  Upload,
   UserRound,
   UsersRound,
   Wrench,
@@ -113,7 +120,104 @@ function Logo() {
   )
 }
 
+function ExecutiveLanding({ onEnter }: { onEnter: () => void }) {
+  const scrollToFlow = () => document.getElementById('boss-flow')?.scrollIntoView({ behavior: 'smooth' })
+
+  return (
+    <div className="executive-site">
+      <header className="executive-nav">
+        <Logo />
+        <div className="executive-nav-meta"><span><i /> Interactive prototype</span><button className="executive-nav-cta" onClick={onEnter}>打開 CRM <ArrowRight size={15} /></button></div>
+      </header>
+
+      <main>
+        <section className="executive-hero">
+          <div className="hero-copy">
+            <span className="hero-kicker"><Sparkles size={14} /> AI-Powered Garage Operations</span>
+            <h1>由一張相，<br />去到一張<span>單。</span></h1>
+            <p>將散落喺 WhatsApp 嘅相片查詢，變成一套可以審批、報價、跟進同預約嘅車房工作流程。</p>
+            <div className="hero-actions"><button className="hero-primary" onClick={onEnter}>親自試完整流程 <ArrowRight size={17} /></button><button className="hero-secondary" onClick={scrollToFlow}>睇 3 步運作方式</button></div>
+            <div className="hero-trust"><div><ShieldCheck size={18} /><span><strong>人工最終把關</strong><small>AI 只建議，不自行報價</small></span></div><div><LockKeyhole size={18} /><span><strong>為私隱而設</strong><small>案件留有審批紀錄</small></span></div></div>
+          </div>
+
+          <div className="hero-product" aria-label="WrenchFlow 產品預覽">
+            <div className="product-window-bar"><div><i /><i /><i /></div><span>wrenchflow / quote #WF-240821</span><b>LIVE DEMO</b></div>
+            <div className="hero-product-grid">
+              <div className="hero-upload">
+                <img src={`${import.meta.env.BASE_URL}demo-bumper-damage.png`} alt="客戶上載的車身刮花示範相片" />
+                <span><Camera size={13} /> CUSTOMER PHOTO</span><i className="hero-damage-pin">1</i>
+              </div>
+              <div className="hero-analysis">
+                <div className="hero-analysis-head"><span><Sparkles size={16} /></span><div><small>AI DRAFT · 18 SEC</small><strong>初步維修建議</strong></div><b>89%</b></div>
+                <p>左前泵把表面刮痕及輕微變形，未見頭燈破損。</p>
+                <div className="hero-analysis-line"><Check size={12} /><span>前泵把局部補油</span><b>$1,800</b></div>
+                <div className="hero-analysis-line"><Check size={12} /><span>左前沙板輕微拉正</span><b>$800</b></div>
+                <div className="hero-analysis-line"><Check size={12} /><span>拆裝及顏色配對</span><b>$600</b></div>
+                <div className="hero-analysis-total"><span>初步報價 <small>人工審批後發送</small></span><b>HK$3,200</b></div>
+                <button onClick={onEnter}><CheckCircle2 size={14} /> 批准並預覽 WhatsApp</button>
+              </div>
+            </div>
+            <div className="product-float whatsapp-float"><MessageCircle size={17} /><span><strong>WhatsApp-ready</strong><small>報價摘要已生成</small></span><CheckCircle2 size={15} /></div>
+            <div className="product-float booking-float"><CalendarCheck2 size={17} /><span><strong>預約已確認</strong><small>星期五 · 10:30</small></span></div>
+          </div>
+        </section>
+
+        <section className="pilot-strip">
+          <div><span className="pilot-label">4 星期試點目標</span></div>
+          <div><strong>&lt; 10 分鐘</strong><span>首次回覆時間</span></div>
+          <div><strong>100%</strong><span>報價人工審批</span></div>
+          <div><strong>1 個流程</strong><span>查詢至預約</span></div>
+          <small>＊目標值，並非現有營運數據</small>
+        </section>
+
+        <section className="executive-section problem-section">
+          <div className="section-heading"><span>THE OPPORTUNITY</span><h2>唔係缺客，係每個查詢都太手工。</h2><p>目前價值流失喺回覆速度、報價一致性同冇人跟進，而唔單止係「AI 睇相」本身。</p></div>
+          <div className="problem-grid">
+            <article><span className="problem-number">01</span><div className="problem-icon"><MessageCircle size={20} /></div><h3>對話散落 WhatsApp</h3><p>相片、車牌、報價同約期分開處理，繁忙時容易漏單。</p><small>WrenchFlow：每個對話自動變成案件</small></article>
+            <article><span className="problem-number">02</span><div className="problem-icon"><Clock3 size={20} /></div><h3>估價靠師傅得閒</h3><p>客戶等得耐就會周圍格價，車房錯過最快成交時機。</p><small>WrenchFlow：AI 先擬稿，人手再審批</small></article>
+            <article><span className="problem-number">03</span><div className="problem-icon"><BarChart3 size={20} /></div><h3>冇數據改善生意</h3><p>唔知道邊類查詢最值錢、報價點解失敗、工場幾時有位。</p><small>WrenchFlow：報價、轉換與產能同一視圖</small></article>
+          </div>
+        </section>
+
+        <section className="executive-section flow-section" id="boss-flow">
+          <div className="flow-intro"><span>ONE CONTROLLED FLOW</span><h2>AI 做起稿，<br />車房做決定。</h2><p>產品重點唔係完全自動化，而係將最快嘅 AI 同最可靠嘅技師判斷放喺同一條流程。</p><div className="risk-callout"><AlertTriangle size={18} /><span><strong>核心風險控制</strong>相片無法排除內部、安全或機械損壞；低信心案件必須要求到店檢查。</span></div></div>
+          <div className="flow-steps">
+            <article><span>1</span><div><Upload size={19} /><h3>客戶傳相</h3><p>WhatsApp 相片、描述、車牌自動歸入同一案件。</p></div></article>
+            <article><span>2</span><div><Bot size={19} /><h3>AI 建議</h3><p>辨認可見損壞，產生維修項目、價錢範圍及信心分數。</p></div></article>
+            <article><span>3</span><div><Wrench size={19} /><h3>車房審批</h3><p>技師修改項目及金額，確認風險提示後先發給客戶。</p></div></article>
+            <article><span>4</span><div><FileCheck2 size={19} /><h3>生成報價</h3><p>客戶同意後產生正式 quotation，保存版本及審批紀錄。</p></div></article>
+            <article><span>5</span><div><CalendarCheck2 size={19} /><h3>鎖定預約</h3><p>按工位及工時提供空檔，確認後同步通知客戶與工場。</p></div></article>
+          </div>
+        </section>
+
+        <section className="executive-section pilot-section">
+          <div className="section-heading"><span>LOW-RISK PILOT</span><h2>先證明生意價值，再投資整合。</h2><p>四星期只測三件事：回覆有冇快、報價有冇一致、預約有冇增加。</p></div>
+          <div className="pilot-plan">
+            <div className="pilot-week"><span>WEEK 01</span><strong>設定服務價目</strong><p>揀 3 類常見、相片可初步判斷嘅鈑噴工作。</p></div>
+            <div className="pilot-week"><span>WEEK 02</span><strong>內部試跑</strong><p>由一位接待及一位技師覆核 20 個歷史案件。</p></div>
+            <div className="pilot-week"><span>WEEK 03</span><strong>真實小流量</strong><p>只開放指定服務，所有訊息與價格保留人工審批。</p></div>
+            <div className="pilot-week"><span>WEEK 04</span><strong>量度與決策</strong><p>比較回覆時間、批改幅度、成交率及到店率。</p></div>
+          </div>
+          <div className="decision-card">
+            <div><Target size={23} /><span><small>GO / NO-GO GATE</small><strong>只有真实数据达标，才进入 WhatsApp 与后台整合。</strong></span></div>
+            <div className="decision-metrics"><span><b>≤ 10 min</b> 首次報價</span><span><b>≤ 20%</b> 技師改價</span><span><b>≥ 50%</b> 查詢轉預約</span></div>
+          </div>
+        </section>
+
+        <section className="executive-cta">
+          <div><span><Building2 size={16} /> WRENCHFLOW PROTOTYPE</span><h2>由你扮車房主管，<br />親自批第一張單。</h2><p>試改價錢、預覽 WhatsApp、生成報價，再替客戶安排到店時間。</p></div>
+          <button onClick={onEnter}>進入互動 Demo <ArrowRight size={18} /></button>
+          <TrendingUp className="cta-graphic" size={180} />
+        </section>
+      </main>
+
+      <footer className="executive-footer"><Logo /><p>Prototype for validation · Not a production diagnostic system</p><span>© 2026 WrenchFlow</span></footer>
+    </div>
+  )
+}
+
 function App() {
+  const [showProduct, setShowProduct] = useState(false)
   const [view, setView] = useState<View>('cases')
   const [items, setItems] = useState<RepairItem[]>(initialItems)
   const [stage, setStage] = useState(2)
@@ -170,6 +274,8 @@ function App() {
     flash(`預約已確認：${bookingDate} ${bookingTime}`)
   }
 
+  if (!showProduct) return <ExecutiveLanding onEnter={() => setShowProduct(true)} />
+
   return (
     <div className="app-shell">
       <aside className="sidebar">
@@ -197,9 +303,10 @@ function App() {
 
       <main className="main-area">
         <header className="topbar">
-          <button className="mobile-brand" onClick={() => setView('dashboard')}><Wrench size={18} /> WF</button>
+          <button className="mobile-brand" onClick={() => setShowProduct(false)}><Wrench size={18} /> WF</button>
           <div className="top-search"><Search size={17} /><input aria-label="搜尋" placeholder="搜尋客戶、車牌或案件編號…" /><kbd>⌘ K</kbd></div>
           <div className="top-actions">
+            <button className="boss-link" onClick={() => setShowProduct(false)}>返回簡介</button>
             <div className="system-live"><i /> 系統正常</div>
             <button className="icon-btn" aria-label="通知"><Bell size={19} /><i /></button>
             <button className="primary compact" onClick={() => { setView('cases'); flash('已建立新查詢草稿') }}><Plus size={17} /> 新增查詢</button>
@@ -369,7 +476,7 @@ function CasesView({ items, stage, subtotal, total, updateItem, removeItem, addI
           <section className="panel photo-panel">
             <div className="panel-header"><div><span className="eyebrow">CUSTOMER UPLOAD</span><h2>車損相片</h2></div><button className="outline small"><ImagePlus size={15} /> 加相片</button></div>
             <div className="damage-photo">
-              <img src="/demo-bumper-damage.png" alt="灰色汽車左前泵把刮花的示範相片" />
+              <img src={`${import.meta.env.BASE_URL}demo-bumper-damage.png`} alt="灰色汽車左前泵把刮花的示範相片" />
               <span className="photo-count"><Camera size={14} /> 1 / 1</span>
               <span className="damage-pin"><i />1</span>
               <div className="scan-line" />

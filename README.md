@@ -2,6 +2,12 @@
 
 一個為香港車房設計的互動式 CRM prototype，示範如何由客戶 WhatsApp 相片查詢，經 AI 初步分析、車房人工審批，到正式報價與預約。
 
+## 在线 Demo
+
+老板简报首页及完整互动流程：<https://biumyang.github.io/garage-ai-crm-prototype/>
+
+首页内所有成效数字均明确标示为「4 星期试点目标」，并非现有营运成绩。
+
 ## Prototype 包含
 
 - 客戶與車輛 CRM 資料
@@ -14,6 +20,7 @@
 - 可選日期與時段的預約流程
 - 總覽、工場日曆及客戶列表
 - Desktop / tablet / mobile responsive layout
+- 老板版商业首页、风险边界与四星期试点计划
 
 ## 本機啟動
 
